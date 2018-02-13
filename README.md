@@ -1,4 +1,4 @@
-# react-native-toast-me [![Build Status](https://travis-ci.org/rensamatar/react-native-toat-me.svg?branch=master)](https://travis-ci.org/newtonry/react-native-toast-me)
+# react-native-toast-me [![Build Status](https://travis-ci.org/rensamatar/react-native-toast-me.svg?branch=master)](https://travis-ci.org/rensamatar/react-native-toast-me)
 
 This component make you easy to handle the exception message.
 
