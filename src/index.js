@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import { Text, View, Animated, Dimensions, Platform } from 'react-native'
-import Colors from './colors'
+import { Text, View, Animated } from 'react-native'
 
-let windowWidth = Dimensions.get('window').width
-let windowHeight = Dimensions.get('window').height
+// Colors for message type.
+let COLOR_SUCCESS = '#4CAF50'
+let COLOR_WARNING = '#F2BF26'
+let COLOR_ERROR = '#DA394E'
+let COLOR_INFO = '#5C92CA'
 
 export default class ToastMe extends Component {
 
@@ -12,7 +14,7 @@ export default class ToastMe extends Component {
     this.animatedValue = new Animated.Value(0)
     this.state = {
       modalShown: false,
-      color: Colors.SUCCESS,
+      color: COLOR_SUCCESS,
       message: 'Unknown',
       modalHeight: 0,
     }
@@ -52,10 +54,10 @@ export default class ToastMe extends Component {
 
   setType(message = 'Unknown', type = 'success') {
     let color
-    if (type == 'success') color = Colors.SUCCESS
-    if (type == 'warning') color = Colors.WARNING
-    if (type == 'error') color = Colors.ERROR
-    if (type == 'info') color = Colors.INFO
+    if (type == 'success') color = COLOR_SUCCESS
+    if (type == 'warning') color = COLOR_WARNING
+    if (type == 'error') color = COLOR_ERROR
+    if (type == 'info') color = COLOR_INFO
 
     this.setState({
       color: color,
@@ -84,6 +86,8 @@ export default class ToastMe extends Component {
           zIndex: 1,
         }}>
         <Text
+          numberOfLines={2}
+          ellipsizeMode={'tail'}
           style={{
             marginHorizontal: 10,
             color: 'white',
