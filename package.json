@@ -1,6 +1,6 @@
 {
   "name": "react-native-toast-me",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A real react-native simple toast message handler",
   "main": "src/index.js",
   "repository": {
@@ -19,10 +19,6 @@
   "peerDependencies": {
     "react": "16.2.0",
     "react-native": "0.52.2"
-  },
-  "dependencies": {
-    "lodash": "^4.16.6",
-    "prop-types": "^15.5.10"
   },
   "devDependencies": {
     "babel-jest": "^22.1.0",
