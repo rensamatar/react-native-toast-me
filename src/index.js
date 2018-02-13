@@ -19,8 +19,7 @@ export default class ToastMe extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('componentWillReceiveProps: ', this.props, nextProps)
-    if (this.props.isShow !== nextProps.isShow) {
+    if (this.props.visible !== nextProps.visible) {
       this.call(nextProps.message, nextProps.type)
     }
   }
