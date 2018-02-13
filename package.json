@@ -1,0 +1,38 @@
+{
+  "name": "react-native-toast-me",
+  "version": "0.0.1",
+  "description": "A real react-native simple toast message handler",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rensamatar/react-native-toast-me.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "toast",
+    "message"
+  ],
+  "author": "Sarawut Popadcha <rensamatar@gmail.com>",
+  "homepage": "https://github.com/rensamatar/react-native-toast-me#readme",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "16.2.0",
+    "react-native": "0.52.2"
+  },
+  "dependencies": {
+    "lodash": "^4.16.6",
+    "prop-types": "^15.5.10"
+  },
+  "devDependencies": {
+    "babel-jest": "^22.1.0",
+    "babel-preset-react-native": "4.0.0",
+    "eslint": "^4.17.0",
+    "eslint-plugin-react": "^7.6.1",
+    "jest": "^22.1.4",
+    "react-test-renderer": "^16.2.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
