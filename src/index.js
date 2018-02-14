@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Animated } from 'react-native'
+import { Text, View, Animated, Modal, Platform } from 'react-native'
 
 // Colors for message type.
 let COLOR_SUCCESS = '#4CAF50'
@@ -41,7 +41,6 @@ export default class ToastMe extends Component {
 
 	close() {
 		setTimeout(() => {
-			this.setState({ modalShown: false })
 			Animated.timing(
 				this.animatedValue,
 				{
@@ -50,6 +49,7 @@ export default class ToastMe extends Component {
 				}
 			).start()
 		}, 2000)
+		this.closeModal()
 	}
 
 	setType(message = 'Unknown', type = 'success') {
@@ -65,6 +65,12 @@ export default class ToastMe extends Component {
 		})
 	}
 
+	closeModal = () => {
+		setTimeout(() => {
+			this.setState({ modalShown: false })
+		}, 3000)
+	}
+
 	render() {
 		let animation = this.animatedValue.interpolate({
 			inputRange: [0, .3, 1],
@@ -72,32 +78,39 @@ export default class ToastMe extends Component {
 		})
 
 		return (
-			<Animated.View
-				style={{
-					...this.props.style,
-					transform: [{ translateY: animation }],
-					height: this.state.modalHeight,
-					backgroundColor: this.state.color,
-					justifyContent: 'center',
-					position: 'absolute',
-					top: 0,
-					left: 0,
-					right: 0,
-					zIndex: 1,
-				}}>
-				<Text
-					numberOfLines={2}
-					ellipsizeMode={'tail'}
+			<Modal
+				animationType={'none'}
+				transparent={true}
+				visible={this.state.modalShown}
+				onRequestClose={this.closeModal}>
+				<Animated.View
 					style={{
-						marginHorizontal: 10,
-						color: 'white',
-						fontSize: 16,
-						fontWeight: 'bold',
-						textAlign: 'center'
+						...this.props.style,
+						transform: [{ translateY: animation }],
+						height: this.state.modalHeight,
+						backgroundColor: this.state.color,
+						justifyContent: 'center',
+						position: 'absolute',
+						top: 0,
+						left: 0,
+						right: 0,
+						zIndex: 1,
 					}}>
-					{this.state.message}
-				</Text>
-			</Animated.View>
+					<Text
+						numberOfLines={2}
+						ellipsizeMode={'tail'}
+						style={{
+							marginHorizontal: 10,
+							color: 'white',
+							fontSize: 16,
+							fontWeight: 'bold',
+							textAlign: 'center',
+							marginTop: (Platform.OS == 'ios' ? 10 : 0)
+						}}>
+						{this.state.message}
+					</Text>
+				</Animated.View>
+			</Modal>
 		)
 	}
 }

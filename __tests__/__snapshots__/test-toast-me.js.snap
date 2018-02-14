@@ -1,43 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<View
-  collapsable={undefined}
-  style={
-    Object {
-      "backgroundColor": "#4CAF50",
-      "height": 0,
-      "justifyContent": "center",
-      "left": 0,
-      "position": "absolute",
-      "right": 0,
-      "top": 0,
-      "transform": Array [
-        Object {
-          "translateY": -70,
-        },
-      ],
-      "zIndex": 1,
-    }
-  }
+<Modal
+  animationType="none"
+  hardwareAccelerated={false}
+  onRequestClose={[Function]}
+  transparent={true}
+  visible={false}
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
-    numberOfLines={2}
+  <View
+    collapsable={undefined}
     style={
       Object {
-        "color": "white",
-        "fontSize": 16,
-        "fontWeight": "bold",
-        "marginHorizontal": 10,
-        "textAlign": "center",
+        "backgroundColor": "#4CAF50",
+        "height": 0,
+        "justifyContent": "center",
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "transform": Array [
+          Object {
+            "translateY": -70,
+          },
+        ],
+        "zIndex": 1,
       }
     }
   >
-    Unknown
-  </Text>
-</View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      numberOfLines={2}
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 16,
+          "fontWeight": "bold",
+          "marginHorizontal": 10,
+          "marginTop": 10,
+          "textAlign": "center",
+        }
+      }
+    >
+      Unknown
+    </Text>
+  </View>
+</Modal>
 `;

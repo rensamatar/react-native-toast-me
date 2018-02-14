@@ -1,6 +1,6 @@
 {
   "name": "react-native-toast-me",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A real react-native simple toast message handler",
   "main": "src/index.js",
   "repository": {
