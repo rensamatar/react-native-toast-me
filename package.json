@@ -1,6 +1,6 @@
 {
   "name": "react-native-toast-me",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A real react-native simple toast message handler",
   "main": "src/index.js",
   "repository": {
@@ -49,6 +49,9 @@
     "preset": "react-native",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
+    ],
+    "modulePathIgnorePatterns": [
+      "Example"
     ]
   }
 }
